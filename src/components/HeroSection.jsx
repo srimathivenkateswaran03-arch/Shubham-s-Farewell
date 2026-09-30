@@ -1,27 +1,28 @@
 import React, { useEffect, useRef } from 'react';
-import { Shield, HelpCircle, Heart, Zap, Wrench, Feather, ChevronDown } from 'lucide-react';
+import { Shield, HelpCircle, Zap, Wrench, ChevronDown } from 'lucide-react';
 import { soundFX } from '../utils/soundEffects';
 
 export default function HeroSection({ onSuitUp }) {
   const canvasRef = useRef(null);
 
-  // Background Arc Reactor Particle Canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
     let animationFrameId;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = canvas.offsetWidth || window.innerWidth || 800;
+      canvas.height = canvas.offsetHeight || 600;
     };
     resize();
     window.addEventListener('resize', resize);
 
     const particles = Array.from({ length: 45 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * (canvas.width || 800),
+      y: Math.random() * (canvas.height || 600),
       radius: Math.random() * 2 + 1,
       color: Math.random() > 0.5 ? '#00f0ff' : '#ffd700',
       vx: (Math.random() - 0.5) * 0.7,
@@ -30,9 +31,9 @@ export default function HeroSection({ onSuitUp }) {
     }));
 
     const render = () => {
+      if (!ctx || !canvas.width || !canvas.height) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // HUD grid
       ctx.strokeStyle = 'rgba(0, 240, 255, 0.04)';
       ctx.lineWidth = 1;
       const gridSize = 45;
@@ -49,7 +50,6 @@ export default function HeroSection({ onSuitUp }) {
         ctx.stroke();
       }
 
-      // Draw glowing particles
       particles.forEach((p, idx) => {
         p.x += p.vx;
         p.y += p.vy;
@@ -86,7 +86,7 @@ export default function HeroSection({ onSuitUp }) {
 
     return () => {
       window.removeEventListener('resize', resize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -117,7 +117,7 @@ export default function HeroSection({ onSuitUp }) {
           </p>
         </div>
 
-        {/* 3 Core Superpower Cards (Minimal & Crisp) */}
+        {/* 3 Core Superpower Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
           
           <div className="iron-card p-5 rounded-2xl border-red-500/40 hover:border-red-400 transition-all text-center">

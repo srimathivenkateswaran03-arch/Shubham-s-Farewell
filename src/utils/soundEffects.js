@@ -6,14 +6,18 @@ class SoundFX {
   }
 
   init() {
-    if (!this.ctx) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) {
-        this.ctx = new AudioCtx();
+    try {
+      if (!this.ctx && typeof window !== 'undefined') {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) {
+          this.ctx = new AudioCtx();
+        }
       }
-    }
-    if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
+      if (this.ctx && this.ctx.state === 'suspended') {
+        this.ctx.resume().catch(() => {});
+      }
+    } catch (e) {
+      console.warn("Audio init deferred:", e);
     }
   }
 
@@ -22,7 +26,6 @@ class SoundFX {
     return this.muted;
   }
 
-  // Sci-Fi HUD Click Sound
   playHudClick() {
     if (this.muted) return;
     this.init();
@@ -49,7 +52,6 @@ class SoundFX {
     }
   }
 
-  // Repulsor Charge & Blast FX
   playRepulsor() {
     if (this.muted) return;
     this.init();
@@ -78,7 +80,6 @@ class SoundFX {
     }
   }
 
-  // Arc Reactor Activation Power-up
   playArcPower() {
     if (this.muted) return;
     this.init();
@@ -106,7 +107,6 @@ class SoundFX {
     }
   }
 
-  // Hologram Voice Chirp
   playJarvisChirp() {
     if (this.muted) return;
     this.init();

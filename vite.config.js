@@ -2,11 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-// Empty string or relative base path for GitHub Pages compatibility
+// GitHub Pages repository base path
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss()
   ],
-  base: '',
+  base: '/Shubham-s-Farewell/',
 });
+
