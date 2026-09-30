@@ -1,0 +1,84 @@
+{
+  "tributes": [
+    {
+      "id": 1,
+      "name": "Captain Steve",
+      "role": "Team Lead",
+      "badge": "Gratitude",
+      "message": "Shubham, you were truly the Tony Stark of our engineering unit. Whenever we faced an insurmountable problem, you answered all questions with calm brilliant solutions. Farewell legend!",
+      "reactions": {
+        "love": 24,
+        "repulsor": 18,
+        "arc": 30
+      },
+      "date": "September 2026"
+    },
+    {
+      "id": 2,
+      "name": "Natasha R.",
+      "role": "Frontend Specialist",
+      "badge": "Zero-Judgement",
+      "message": "Thank you for never ever making me feel silly when asking simple questions. Your patience and zero-judgment shield empowered me so much. We'll miss you 3000!",
+      "reactions": {
+        "love": 35,
+        "repulsor": 22,
+        "arc": 40
+      },
+      "date": "September 2026"
+    },
+    {
+      "id": 3,
+      "name": "Bruce B.",
+      "role": "Backend Architect",
+      "badge": "3000% Optimism",
+      "message": "Your positivity was infectious! Whenever our servers crashed or code broke, you brought 3000% optimism and turned chaos into a celebration of learning.",
+      "reactions": {
+        "love": 19,
+        "repulsor": 15,
+        "arc": 28
+      },
+      "date": "September 2026"
+    }
+  ],
+  "jugaadHacks": [
+    {
+      "id": 1,
+      "title": "The 2-Line Miracle Transform",
+      "category": "Clean Hack",
+      "badge": "LEGENDARY JUGAAD",
+      "description": "When the legacy API started returning mismatched date structures 10 minutes before demo, everyone panicked. Shubham casually smiled, dropped a 2-line array reduce Jugaad, and saved the entire demo!",
+      "shubhamQuote": "If it's stupid and it works cleanly without side effects, it's a Tony Stark Masterpiece! 🚀",
+      "upvotes": 42,
+      "savedTime": "3 Days"
+    },
+    {
+      "id": 2,
+      "title": "The Zero-Downtime Cache Patch",
+      "category": "Emergency Fix",
+      "badge": "STARK GENIUS",
+      "description": "Server memory was spiking during peak stress tests. Instead of a 3-day server overhaul, Shubham introduced a clever client-side memoization Jugaad method that cut load times by 80% instantly.",
+      "shubhamQuote": "Why rebuild the entire engine when a clever spark plug tweak gets us flying at Mach 3? ⚡",
+      "upvotes": 38,
+      "savedTime": "1 Week"
+    }
+  ],
+  "poems": [
+    {
+      "id": 1,
+      "title": "The Arc Reactor of Wisdom",
+      "author": "Dedicated to Shubham",
+      "date": "Farewell Edition",
+      "verses": [
+        "In a sea of questions, complex and wide,",
+        "He stood as our anchor, our steady guide.",
+        "No query too simple, no puzzle too grand,",
+        "He helped every thinker to understand.",
+        "",
+        "With a mind like Stark and a heart so kind,",
+        "A gentler mentor you'll never find.",
+        "He lit up the shadows with words so bright,",
+        "And turned every obstacle into light."
+      ]
+    }
+  ]
+}
