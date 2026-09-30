@@ -2,11 +2,12 @@ import React, { useState, useRef } from 'react';
 import { Download, ImageIcon, RefreshCw, Check } from 'lucide-react';
 import { toPng } from 'html-to-image';
 import { soundFX } from '../utils/soundEffects';
+import defaultTeamPhoto from '../assets/shubham_avengers_team.jpg';
 
 export default function MemoryFrameSection() {
   const frameRef = useRef(null);
 
-  const teamPhotoPath = '/shubham_avengers_team.jpg';
+  const [attachedImage, setAttachedImage] = useState(defaultTeamPhoto);
   const [frameStyle, setFrameStyle] = useState('hud');
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
@@ -98,10 +99,10 @@ export default function MemoryFrameSection() {
               </span>
             </div>
 
-            {/* Photo Display - Full Height with top padding correction */}
+            {/* Photo Display */}
             <div className="relative rounded-2xl overflow-hidden border border-current/30 shadow-2xl bg-black flex items-center justify-center p-2 sm:p-3">
               <img 
-                src={teamPhotoPath} 
+                src={attachedImage} 
                 alt="Shubham & The Avengers Team" 
                 className="w-full h-auto max-h-[620px] object-contain rounded-xl" 
                 style={{ objectPosition: 'center top' }}
